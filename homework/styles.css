@@ -1,0 +1,114 @@
+#root {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 420px;
+  box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.75);
+  margin: 10px auto;
+  border-radius: 10px;
+  font-size: 14px;
+  position: relative;
+  z-index: 0;
+}
+#root>ul {
+  box-sizing: border-box;
+  height: 100%;
+  width: 410px;
+  padding: 20px 0 20px 50px;
+}
+ul>li>ul {
+  display: none;
+}
+ul>li.open>ul {
+  display: block;
+}
+li {
+  list-style: none;
+}
+span {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  font-size: 15px;
+}
+span:hover {
+  background-color: rgba(200, 200, 200, .3);
+  cursor: pointer;
+}
+span.stillHover {
+  background-color: rgba(200, 200, 200, .3);
+  cursor: pointer;
+}
+span::before {
+  position: relative;
+  top: 7px;
+  left: 10px;
+  font-size: 30px;
+  transform: translate(-50%);
+}
+span.open.folder::before {
+  font-family: 'Material Icons';
+  content: "folder_open";
+  color: rgb(235, 203, 97);
+}
+span.folder::before {
+  font-family: 'Material Icons';
+  content: "folder";
+  color: rgb(235, 203, 97);
+}
+span.file::before {
+  position: relative;
+  top: 8px;
+  left: 12px;
+  font-family: 'Material Icons';
+  content: "insert_drive_file";
+  color: rgb(167, 176, 185);
+  font-size: 25px;
+}
+span.active {
+  z-index: -1;
+}
+.empty>li>span {
+  position: relative;
+  top: 0;
+  left: -22px;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+}
+input {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 7px;
+  font-size: 15px;
+  background-color: rgb(233, 233, 233);
+  z-index: -1;
+}
+input:disabled {
+  background-color: #fff;
+  border-color: transparent;
+  font-size: 15px;
+  color: black;
+  margin: 7px;
+}
+.rightMenu {
+  margin: 0;
+  padding: 14px;
+  position: fixed;
+  background-color: rgb(245, 245, 245);
+  box-shadow: 5px 5px 18px -3px rgba(0, 0, 0, 0.75);
+  list-style: none;
+  display: none;
+  font-size: 17px;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: default;
+  color: grey;
+}
+.enabled {
+  color: black;
+}
+.enabled>li:hover {
+  background-color: rgb(233, 233, 233);
+  cursor: pointer;
+}
+.rightMenu.active {
+  display: block;
+}
